@@ -1,0 +1,435 @@
+/**
+ * ===============================================================
+ * Guide.
+ * ===============================================================
+ */
+
+// .grid-x {
+//     border:1px solid red;
+// }
+
+// .cell {
+//     border: 1px solid blue;
+// }
+
+// .medium-6 {
+//     // border: 1px solid green;
+// }
+
+// .expanded {
+//     border: 1px solid black;
+// }
+
+// .row {
+//     border: 2px solid green;
+// }
+
+/**
+ * ===============================================================
+ * Base
+ * ===============================================================
+ */
+
+/**
+ * Variables.
+ */
+@font-title: 'Source Sans Pro', serif;
+@font-body: 'Source Sans Pro', sans-serif;
+@font-size: 18px;
+@path-dist-image: "images";
+@path-dist-font: "fonts";
+@path-node-modules: "../../node_modules";
+@grey-xdark: #515b69;
+@grey-dark: #606163;
+@grey-medium: #a7a7a7;
+@grey-light: #c6c6c6;
+@grey-xlight: #f8f7f5;
+@blue-xdark: #2f98d9;
+@blue-dark: #0059ab;
+
+/**
+ * ===============================================================
+ * Dependencies
+ * ===============================================================
+ */
+@import '@{path-node-modules}/foundation-sites/dist/css/foundation.min.css';
+@import '@{path-node-modules}/foundation-icon-fonts/foundation-icons.css';
+@import '@{path-node-modules}/jquery-ui-bundle/jquery-ui.min.css';
+@import '@{path-node-modules}/swiper/dist/css/swiper.min.css';
+@import '@{path-node-modules}/aos/dist/aos.css';
+
+/**
+ * ===============================================================
+ * HTML/ Global
+ * ===============================================================
+ */
+html,
+body {
+    position: relative;
+}
+
+body {
+    color: @grey-dark;
+    font-family: @font-body;
+    font-size: @font-size;
+    background-color: #f2f2f2;
+}
+
+p:last-child {
+    margin: 0 !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.overlay-fullsize {
+    .overlayFullsize();
+}
+
+.center-element {
+    .centerElement();
+}
+
+.vertical-center-right {
+    .verticalCenterRight();
+}
+
+.vertical-center-left {
+    .verticalCenterLeft();
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.button-arrow-up {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 999999;
+    display: none;
+    background-color: @blue-dark;
+
+    &:hover i {
+        background-color: @grey-dark;
+        color: #fff;
+    }
+
+    i {
+        // Remove white space at the bottom.
+        float: left;
+    }
+}
+
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+    //
+}
+
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+    //
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+    //
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    //
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    //
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+    //
+}
+
+/**
+ * ===============================================================
+ * Article
+ * ===============================================================
+ */
+
+.article-item {
+    font-size: 18px;
+    font-weight: 300;
+
+    .title-article {
+        font-family: @font-title;
+        font-size: 28px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+/**
+ * ===============================================================
+ * Contact
+ * ===============================================================
+ */
+
+.row-contact {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .article-item {
+        padding-top: 0;
+        padding-bottom: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+    //
+}
+
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+    //
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+    //
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    //
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    //
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+    //
+}
+
+/**
+ * ===============================================================
+ * Forms
+ * ===============================================================
+ */
+
+.row-subscribe {
+    background-color: @grey-xlight;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 80px;
+    // border-bottom: 1px solid @grey-light;
+}
+
+/*
+Change the Chrome autocomplete colour.
+https://codepen.io/team/css-tricks/pen/oxyJxR
+*/
+form.form-contact input.form-input:-webkit-autofill {
+    border: 1px solid #000000;
+    // -webkit-text-fill-color: #ffffff;
+    // -webkit-box-shadow: 0 0 0px 1000px #000000 inset;
+    // transition: background-color 5000s ease-in-out 0s;
+}
+
+form.form-contact {
+    select.form-input,
+    input.form-input,
+    textarea.form-input {
+        color: #000000;
+        // border: none;
+    }
+
+    // Use fixed height instead or there is a bug in Firefox.
+    // https://stackoverflow.com/questions/17645993/possible-input-padding-bug-in-firefox
+    input.form-input{
+        height: 60px;
+    }
+
+    label {
+        color: @grey-medium;
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+.button.button-submit {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    font-family: @font-body;
+    font-size: 20px;
+
+    background-color: @blue-dark;
+
+    &:hover,
+    &:focus {
+        background-color: @grey-dark;
+    }
+}
+
+.alert,
+.form-error {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing:0.05em;
+}
+
+/*
+Change the placeholder colour.
+http://foundation.zurb.com/forum/posts/19004-customcss-file-doesnt-work--placeholder-color-cant-change
+https://stackoverflow.com/questions/2610497/change-an-html5-inputs-placeholder-color-with-css
+*/
+.changePlaceholderColour() {
+    font-family: @font-body;
+}
+
+form.form-contact {
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        .changePlaceholderColour()
+    }
+
+    input:-moz-placeholder,
+    textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        .changePlaceholderColour()
+    }
+
+    input::-moz-placeholder,
+    textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+        .changePlaceholderColour()
+    }
+
+    input:-ms-input-placeholder,
+    textarea::-ms-input-placeholder { /* Internet Explorer 10-11 */
+        .changePlaceholderColour()
+    }
+
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder { /* Microsoft Edge */
+        .changePlaceholderColour()
+    }
+}
+
+.show-on-xxlarge {
+    display: none !important;
+}
+
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+    .show-on-xxlarge {
+        display: block !important;
+    }
+}
+
+/**
+ * Loader layer.
+ */
+.input-file {
+    display: inline-block;
+}
+
+.disabled {
+    cursor: not-allowed;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.row-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999999999999999;
+    background-color: #ffffff;
+    background-color:rgba(255, 255, 255, 0.5);
+}
+
+/**
+ * Spinner.
+ * http://tobiasahlin.com/spinkit/
+ */
+.spinner {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}

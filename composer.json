@@ -1,0 +1,18 @@
+{
+    "require": {
+        "slim/slim": "^3.10.0",
+        "phpmailer/phpmailer": "^6.0",
+        "dompdf/dompdf": "^0.8.2",
+        "slim/php-view": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Monsoon\\": [
+                "source/"
+            ],
+            "YourCustomNamespace\\": [
+                "source/"
+            ]
+        }
+    }
+}

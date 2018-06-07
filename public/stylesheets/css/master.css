@@ -1,0 +1,512 @@
+/**
+ * ===============================================================
+ * Base - functions
+ * ===============================================================
+ */
+/**
+ * Add box shadow.
+ * @param  {[type]} @size: 0             [description]
+ * @param  {[type]} @r:0   [description]
+ * @param  {[type]} @g:0   [description]
+ * @param  {[type]} @b:0   [description]
+ * @param  {[type]} @a:1   [description]
+ * @return {[type]}        [description]
+ */
+/**
+ * Adding animation.
+ * @param  {[type]} @speed: 0.25s         [description]
+ * @return {[type]}         [description]
+ */
+/**
+ * Adding fade in out effect on hover, etc.
+ * https://css-tricks.com/almanac/properties/t/transition/
+ * @param  {[type]} $property: all         [description]
+ * @param  {[type]} $time:     1s            [description]
+ * @param  {[type]} $method:   ease-in-out   [description]
+ * @return {[type]}            [description]
+ */
+/**
+ * Make opacity.
+ * https://css-tricks.com/snippets/css/useful-css3-less-mixins/
+ */
+/**
+ * Center element vertically & horizontally.
+ */
+/**
+ * Left vertical center.
+ * http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+ */
+/**
+ * Right vertical center.
+ */
+/**
+ * Rotate an elemnent.
+ * https://css-tricks.com/snippets/css/useful-css3-less-mixins/
+ * https://stackoverflow.com/questions/12960249/rotate-text-by-using-less
+ */
+/**
+ * ===============================================================
+ * Guide.
+ * ===============================================================
+ */
+/**
+ * ===============================================================
+ * Base
+ * ===============================================================
+ */
+/**
+ * Variables.
+ */
+/**
+ * ===============================================================
+ * Dependencies
+ * ===============================================================
+ */
+@import '../../node_modules/foundation-sites/dist/css/foundation.min.css';
+@import '../../node_modules/foundation-icon-fonts/foundation-icons.css';
+@import '../../node_modules/jquery-ui-bundle/jquery-ui.min.css';
+@import '../../node_modules/swiper/dist/css/swiper.min.css';
+@import '../../node_modules/aos/dist/aos.css';
+/**
+ * ===============================================================
+ * HTML/ Global
+ * ===============================================================
+ */
+html,
+body {
+  position: relative;
+}
+body {
+  color: #606163;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  background-color: #f2f2f2;
+}
+p:last-child {
+  margin: 0 !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.full-height {
+  height: 100%;
+}
+.position-relative {
+  position: relative;
+}
+.overlay-fullsize {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+.center-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.vertical-center-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+}
+.vertical-center-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.button-arrow-up {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 999999;
+  display: none;
+  background-color: #0059ab;
+}
+.button-arrow-up:hover i {
+  background-color: #606163;
+  color: #fff;
+}
+.button-arrow-up i {
+  float: left;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/**
+ * ===============================================================
+ * Article
+ * ===============================================================
+ */
+.article-item {
+  font-size: 18px;
+  font-weight: 300;
+}
+.article-item .title-article {
+  font-family: 'Source Sans Pro', serif;
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.article-item ul {
+  padding-left: 20px;
+}
+.article-item p {
+  margin-bottom: 20px;
+}
+/**
+ * ===============================================================
+ * Contact
+ * ===============================================================
+ */
+.row-contact {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.row-contact .article-item {
+  padding-top: 0;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/**
+ * ===============================================================
+ * Forms
+ * ===============================================================
+ */
+.row-subscribe {
+  background-color: #f8f7f5;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 80px;
+}
+/*
+Change the Chrome autocomplete colour.
+https://codepen.io/team/css-tricks/pen/oxyJxR
+*/
+form.form-contact input.form-input:-webkit-autofill {
+  border: 1px solid #000000;
+}
+form.form-contact select.form-input,
+form.form-contact input.form-input,
+form.form-contact textarea.form-input {
+  color: #000000;
+}
+form.form-contact input.form-input {
+  height: 60px;
+}
+form.form-contact label {
+  color: #a7a7a7;
+  font-size: 18px;
+  font-weight: 600;
+}
+.button.button-submit {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  background-color: #0059ab;
+}
+.button.button-submit:hover,
+.button.button-submit:focus {
+  background-color: #606163;
+}
+.alert,
+.form-error {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+/*
+Change the placeholder colour.
+http://foundation.zurb.com/forum/posts/19004-customcss-file-doesnt-work--placeholder-color-cant-change
+https://stackoverflow.com/questions/2610497/change-an-html5-inputs-placeholder-color-with-css
+*/
+form.form-contact input::-webkit-input-placeholder,
+form.form-contact textarea::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+form.form-contact input:-moz-placeholder,
+form.form-contact textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+form.form-contact input::-moz-placeholder,
+form.form-contact textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+form.form-contact input:-ms-input-placeholder,
+form.form-contact textarea::-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+form.form-contact input::-ms-input-placeholder,
+form.form-contact textarea::-ms-input-placeholder {
+  /* Microsoft Edge */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.show-on-xxlarge {
+  display: none !important;
+}
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+  .show-on-xxlarge {
+    display: block !important;
+  }
+}
+/**
+ * Loader layer.
+ */
+.input-file {
+  display: inline-block;
+}
+.disabled {
+  cursor: not-allowed;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+.row-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999999999999999;
+  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/**
+ * Spinner.
+ * http://tobiasahlin.com/spinkit/
+ */
+.spinner {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center;
+}
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+@-webkit-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/**
+ * ===============================================================
+ * Customise Foundation font path.
+ * ===============================================================
+ */
+@font-face {
+  font-family: "foundation-icons";
+  src: url("fonts/foundation-icons.eot");
+  src: url("fonts/foundation-icons.eot?#iefix") format("embedded-opentype"), url("fonts/foundation-icons.woff") format("woff"), url("fonts/foundation-icons.ttf") format("truetype"), url("fonts/foundation-icons.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/**
+ * ===============================================================
+ * Material Icons
+ * ===============================================================
+ */
+.material-icons {
+  padding: 0;
+  margin: 0;
+}
+.material-icons.md-light {
+  color: #ffffff;
+}
+.material-icons.md-60 {
+  font-size: 60px;
+}
+.material-icons.fontsize-16 {
+  font-size: 16px;
+  float: right;
+  margin-top: 1px;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/MaterialIcons-Regular.eot');
+  /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url('fonts/MaterialIcons-Regular.woff2') format('woff2'), url('fonts/MaterialIcons-Regular.woff') format('woff'), url('fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.material-icons.md-80 {
+  font-size: 80px;
+  line-height: 20px;
+}
+/**
+ * ===============================================================
+ * Customise jQuery ui font path.
+ * ===============================================================
+ */
+.ui-icon,
+.ui-widget-content .ui-icon {
+  background-image: url("images/ui-icons_444444_256x240.png");
+}
+.ui-widget-header .ui-icon {
+  background-image: url("images/ui-icons_444444_256x240.png");
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-button:focus .ui-icon {
+  background-image: url("images/ui-icons_555555_256x240.png");
+}
+.ui-state-active .ui-icon,
+.ui-button:active .ui-icon {
+  background-image: url("images/ui-icons_ffffff_256x240.png");
+}
+.ui-state-highlight .ui-icon,
+.ui-button .ui-state-highlight.ui-icon {
+  background-image: url("images/ui-icons_777620_256x240.png");
+}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+  background-image: url("images/ui-icons_cc0000_256x240.png");
+}
+.ui-button .ui-icon {
+  background-image: url("images/ui-icons_777777_256x240.png");
+}
+
+/*# sourceMappingURL=maps/master.css.map */
