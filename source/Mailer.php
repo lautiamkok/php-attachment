@@ -59,7 +59,6 @@ class Mailer
         // store the posted data.
         $data = $_POST;
 
-
         // Passing `true` enables exceptions.
         // Call method instead of using new so you can unit test this sendMail method.
         $mail = $this->createPHPMailer(true);
