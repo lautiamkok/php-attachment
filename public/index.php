@@ -45,6 +45,9 @@ unset($app->getContainer()['errorHandler']);
 unset($app->getContainer()['phpErrorHandler']);
 
 $app->get('/', function (Request $request, Response $response, $args) {
+    $whitelist = ['image/jpeg', 'image/png'];
+    var_dump(count($whitelist));
+
     $response = $this->view->render($response, 'index.html', []);
     return $response;
 });
@@ -90,7 +93,7 @@ $app->post('/feedback', function (Request $request, Response $response, $args) {
 
     // Try and catch the result.
     try {
-        $mailer = new Mailer('public/uploads/');
+        $mailer = new Mailer('public/uploads/', 1, ['image/jpeg', 'image/png']);
         $result = $mailer->sendMail($emailsTo, $emailsCc, $emailsBcc);
         $data = [
             "status" => $status,

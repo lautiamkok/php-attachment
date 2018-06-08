@@ -21,17 +21,35 @@ class Mailer
     use Utils;
 
     /**
+     * Location for uploaded files.
      * @var string
      */
     protected $uploaddir;
 
     /**
+     * Max file size for uploading.
+     * @var int
+     */
+    protected $maxsize;
+
+    /**
+     * Permitted extensions for uploading.
+     * @var array
+     */
+    protected $whitelist = [];
+
+    /**
      * Contruct essential data.
      * @param [string] $uploaddir
      */
-    public function __construct($uploaddir)
-    {
+    public function __construct(
+        $uploaddir,
+        $maxsize = 2,
+        $whitelist = []
+    ) {
         $this->uploaddir = $uploaddir;
+        $this->maxsize = $maxsize;
+        $this->whitelist = $whitelist;
     }
 
     /**
@@ -215,7 +233,7 @@ class Mailer
         // Validate the uploaded files.
         $validated = array();
         foreach ($files as $key => $file) {
-            $validated[] = $this->validateUploadFiles($file);
+            $validated[] = $this->validateUploadFiles($file, $this->maxsize, $this->whitelist);
         }
 
         // Scoop for any error.

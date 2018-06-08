@@ -5,7 +5,8 @@ trait Utils
 {
     // Convert the $_FILES array to the cleaner (IMHO) array.
     // http://php.net/manual/en/features.file-upload.multiple.php#53240
-    function reArrayUploadFiles (&$file_post) {
+    function reArrayUploadFiles (&$file_post)
+    {
         $file_ary = array();
         $file_count = count($file_post['name']);
         $file_keys = array_keys($file_post);
@@ -19,10 +20,14 @@ trait Utils
     }
 
     // Validate the file array.
-    function validateUploadFiles ($file = ''){
+    function validateUploadFiles (
+        $file = '',
+        $maxsize = 2,
+        $whitelist = []
+    ) {
         // File upload error messages.
         // http://php.net/manual/en/features.file-upload.errors.php
-        $phpFileUploadErrors = array(
+        $phpFileUploadErrors = [
             0 => 'There is no error, the file uploaded with success',
             1 => 'The uploaded file exceeds the upload_max_filesize directive in php.ini',
             2 => 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
@@ -31,23 +36,26 @@ trait Utils
             6 => 'Missing a temporary folder',
             7 => 'Failed to write file to disk.',
             8 => 'A PHP extension stopped the file upload.',
-        );
+        ];
 
-        $max_upload_size = 2 * 1024 * 1024; // 2MB
+        $max_upload_size = $maxsize * 1024 * 1024; // 2MB
 
+        // Use the default whitelist if it is not provided.
         // https://www.sitepoint.com/web-foundations/mime-types-summary-list/
-        $type_whitelist = array(
-            'image/jpeg',
-            'image/png',
-            // 'image/gif',
-            // 'video/mpeg',
-            // 'video/mp4',
-            // 'application/msword',
-            // 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-            // 'application/pdf'
-        );
+        if (count($whitelist) === 0) {
+            $whitelist = [
+                'image/jpeg',
+                'image/png',
+                'image/gif',
+                'video/mpeg',
+                'video/mp4',
+                'application/msword',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                'application/pdf'
+            ];
+        }
 
-        $result = array();
+        $result = [];
         $result['error'] = 0;
 
         if ($file['error']) {
@@ -56,19 +64,20 @@ trait Utils
             return $result;
         }
 
-        if (!in_array($file['type'], $type_whitelist)) {
+        if (!in_array($file['type'], $whitelist)) {
             $result['name'] = $file['name'];
             $result['error'] = 'must be a jpeg, or png';
         } elseif(($file['size'] > $max_upload_size)){
             $result['name'] = $file['name'];
-            $result['error'] = convertToReadableSize($file['size']) . ' bytes! It must not exceed ' . convertToReadableSize($max_upload_size) . ' bytes.';
+            $result['error'] = $this->convertToReadableSize($file['size']) . ' bytes! It must not exceed ' . $this->convertToReadableSize($max_upload_size) . ' bytes.';
         }
         return $result;
     }
 
     // Byte to readable format.
     // https://subinsb.com/convert-bytes-kb-mb-gb-php/
-    function convertToReadableSize($size){
+    function convertToReadableSize($size)
+    {
       $base = log($size) / log(1024);
       $suffix = array("", "KB", "MB", "GB", "TB");
       $f_base = floor($base);
@@ -76,7 +85,8 @@ trait Utils
     }
 
     // Get bytes.
-    function iniGetBytes($val) {
+    function iniGetBytes($val)
+    {
         $val = trim(ini_get($val));
         if ($val != '') {
             $last = $val{strlen($val) - 1};
@@ -99,7 +109,8 @@ trait Utils
 
     // Remove array the key that has empty value - recursively.
     // https://stackoverflow.com/questions/7696548/php-how-to-remove-empty-entries-of-an-array-recursively
-    function arrayFilter($array) {
+    function arrayFilter($array)
+    {
          if(!empty($array)) {
              return array_filter($array);
          }

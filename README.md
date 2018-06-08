@@ -1,6 +1,8 @@
 # PHP Attachment
 
-> Sending attachments with PHPMailer
+> Sending attachments with PHPMailer and AJAX upload
+
+Read the post [here](https://www.codementor.io/lautiamkok/sending-attachments-with-phpmailer-and-ajax-upload-kaoel5byv) about this repository.
 
 ## Quick Setup
 

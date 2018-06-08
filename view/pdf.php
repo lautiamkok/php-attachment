@@ -44,7 +44,6 @@
 <body>
 
 <main>
-    <!-- row contact -->
     <div class="row row-pdf">
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
@@ -74,7 +73,6 @@
             </div>
         </div>
     </div>
-    <!-- row contact -->
 
     <div class="row row-attachments">
 
