@@ -45,9 +45,6 @@ unset($app->getContainer()['errorHandler']);
 unset($app->getContainer()['phpErrorHandler']);
 
 $app->get('/', function (Request $request, Response $response, $args) {
-    $whitelist = ['image/jpeg', 'image/png'];
-    var_dump(count($whitelist));
-
     $response = $this->view->render($response, 'index.html', []);
     return $response;
 });
