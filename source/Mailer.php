@@ -279,8 +279,6 @@ class Mailer
 
     /**
      * Abstract the object so you can unit the sendMail method.
-     * https://stackoverflow.com/questions/7760635/unit-test-for-mocking-a-method-called-by-new-class-object
-     * @param  bool $boolean
      * @return object
      */
     private function createDompdf()
