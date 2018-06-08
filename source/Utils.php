@@ -115,6 +115,4 @@ trait Utils
              return array_filter($array);
          }
     }
-
 }
-
