@@ -3,8 +3,12 @@ namespace Monsoon;
 
 trait Utils
 {
-    // Convert the $_FILES array to the cleaner (IMHO) array.
-    // http://php.net/manual/en/features.file-upload.multiple.php#53240
+    /**
+     * Convert the $_FILES array to the cleaner (IMHO) array.
+     * http://php.net/manual/en/features.file-upload.multiple.php#53240
+     * @param  array &$file_post
+     * @return array
+     */
     function reArrayUploadFiles (&$file_post)
     {
         $file_ary = array();
@@ -19,7 +23,13 @@ trait Utils
         return $file_ary;
     }
 
-    // Validate the file array.
+    /**
+     * Validate the file array.
+     * @param  string  $file
+     * @param  integer $maxsize
+     * @param  array   $whitelist
+     * @return array
+     */
     function validateUploadFiles (
         $file = '',
         $maxsize = 2,
@@ -74,8 +84,12 @@ trait Utils
         return $result;
     }
 
-    // Byte to readable format.
-    // https://subinsb.com/convert-bytes-kb-mb-gb-php/
+    /**
+     * Byte to readable format.
+     * https://subinsb.com/convert-bytes-kb-mb-gb-php/
+     * @param  int $size
+     * @return int
+     */
     function convertToReadableSize($size)
     {
         $base = log($size) / log(1024);
@@ -84,7 +98,11 @@ trait Utils
         return round(pow(1024, $base - floor($base)), 1) . $suffix[$f_base];
     }
 
-    // Get bytes.
+    /**
+     * Get bytes.
+     * @param  string $val
+     * @return int
+     */
     function iniGetBytes($val)
     {
         $val = trim(ini_get($val));
@@ -107,8 +125,12 @@ trait Utils
         return $val;
     }
 
-    // Remove array the key that has empty value - recursively.
-    // https://stackoverflow.com/questions/7696548/php-how-to-remove-empty-entries-of-an-array-recursively
+    /**
+     * Remove array the key that has empty value - recursively.
+     * https://stackoverflow.com/questions/7696548/php-how-to-remove-empty-entries-of-an-array-recursively
+     * @param  array $array
+     * @return array
+     */
     function arrayFilter($array)
     {
         if(!empty($array)) {
