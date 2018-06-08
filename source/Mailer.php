@@ -223,21 +223,20 @@ class Mailer
      */
     private function uploadFiles()
     {
-        $files = [];
-
         // Re-arrange the default file array.
+        $files = [];
         if (isset($_FILES['sender-attachments']) && count($_FILES['sender-attachments']) > 0) {
             $files = $this->reArrayUploadFiles($_FILES['sender-attachments']);
         }
 
         // Validate the uploaded files.
-        $validated = array();
+        $validated = [];
         foreach ($files as $key => $file) {
             $validated[] = $this->validateUploadFiles($file, $this->maxsize, $this->whitelist);
         }
 
         // Scoop for any error.
-        $error_upload = array();
+        $error_upload = [];
         foreach ($validated as $key => $file) {
             if ($file ['error']) {
                 if (isset($file ['name'])) {
